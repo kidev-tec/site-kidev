@@ -10,7 +10,6 @@
 
     $(window).on('load', function () {
         preloader();
-        wowAnimation();
         aosAnimation();
     });
 
@@ -272,36 +271,6 @@
     });
 
     /*=============================================
-        =    		Magnific Popup		      =
-    =============================================*/
-    $('.popup-image').magnificPopup({
-        type: 'image',
-        gallery: {
-            enabled: true
-        }
-    });
-
-    /* magnificPopup video view */
-    $('.popup-video').magnificPopup({
-        type: 'iframe'
-    });
-
-
-    /*=============================================
-        =    		 Wow Active  	         =
-    =============================================*/
-    function wowAnimation() {
-        var wow = new WOW({
-            boxClass: 'wow',
-            animateClass: 'animated',
-            offset: 0,
-            mobile: false,
-            live: true
-        });
-        wow.init();
-    }
-
-    /*=============================================
         =           Aos Active       =
     =============================================*/
     function aosAnimation() {
@@ -312,85 +281,6 @@
             disable: 'mobile',
         });
     }
-
-    /*=============================================
-        =           Counter Number       =
-    =============================================*/
-    $(".counter-number").counterUp({
-        delay: 10,
-        time: 1000,
-    });
-
-    /*=============================================
-        =           Progress Counter       =
-    =============================================*/
-    $('.progress-bar').waypoint(function () {
-        $('.progress-bar').css({
-            animation: "animate-positive 1.8s",
-            opacity: "1"
-        });
-    }, { offset: '100%' });
-
-
-    /*=============================================
-        =           Masonary Active       =
-    =============================================*/
-    $(".masonary-active").imagesLoaded(function () {
-        var $filter = ".masonary-active",
-            $filterItem = ".filter-item",
-            $filterMenu = ".filter-menu-active";
-
-        if ($($filter).length > 0) {
-            var $grid = $($filter).isotope({
-                itemSelector: $filterItem,
-                filter: "*",
-                masonry: {
-                    // use outer width of grid-sizer for columnWidth
-                    columnWidth: 1,
-                },
-            });
-
-            // filter items on button click
-            $($filterMenu).on("click", "button", function () {
-                var filterValue = $(this).attr("data-filter");
-                $grid.isotope({
-                    filter: filterValue,
-                });
-            });
-
-            // Menu Active Class
-            $($filterMenu).on("click", "button", function (event) {
-                event.preventDefault();
-                $(this).addClass("active");
-                $(this).siblings(".active").removeClass("active");
-            });
-        }
-    });
-
-    /*=============================================
-        =           Date Time Picker       =
-    =============================================*/
-    // Only Date Picker
-    $('.date-pick').datetimepicker({
-        timepicker: false,
-        datepicker: true,
-        format: 'd-m-y',
-        step: 10
-    });
-
-    // Only Time Picker
-    $('.time-pick').datetimepicker({
-        datepicker: false,
-        format: 'H:i',
-        step: 30
-    });
-
-    // Date Time
-    $('.date-time-pick').datetimepicker({
-
-    });
-
-
 
     /*=============================================
         =           Gsap text Animation       =

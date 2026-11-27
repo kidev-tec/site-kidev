@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO domain: substituir pela URL final após publicação.
+Sitemap: https://kidev.tec.br/sitemap.xml
